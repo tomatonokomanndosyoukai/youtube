@@ -120,5 +120,27 @@
   }
 </script>
 
+ <p>リソース/textures/item_texture.json</p>
+ <p></p>
+ <p> {
+  "resource_pack_name" : "vanilla",
+  "texture_data" : {
+   
+    "<span id="span5"></span>": { "textures": "textures/item/<span id="span7"></span>" }  
+  },
+  "texture_name" : "atlas.items"
+} <p/>
+ 
+  <p>テクスチャの場所(拡張子はいらない)<p>
+<input type="text" value="tomato" id="text7" maxlength="1000" />
+<input type="button" value="決定" onclick="clickBtn7()" />
+
+<script>
+  function clickBtn7() {
+    const t7 = document.getElementById("text7").value;
+    document.getElementById("span7").textContent = t7;
+  }
+</script>
+
 
 </html>
