@@ -1,8 +1,67 @@
 <html>
- <p>ログインリンク</p>
- <p> https://script.google.com/macros/s/AKfycbwppd-8Yl78ReNmBy4EKLXqZVf09cvpI11rW9x_Mm0KtIWqd4Yc4o_KHz-MWaZpgLgQ/exec?q=<span id="span1"></span> <p>
-<input type="text" value="パスワードを入力" id="text1" maxlength="100" /
-<input type="button" value="パスワード確定" onclick="clickBtn1()" />
+ 
+ <p> ビヘイビア/itemsフォルダ/このファイル <p>
+ <p> {
+  "format_version": "1.16.100",
+  "minecraft:item": {
+    "description": {
+        "identifier": "<span id="span1"><span/>",
+        "category": "Equipment"
+    },
+    "components": {
+        "minecraft:max_stack_size": 1,
+        "minecraft:hand_equipped": true,
+        "minecraft:use_duration":32,
+        "minecraft:creative_category": {
+          "parent": "itemGroup.name.sword"
+        },
+      //耐久値
+        "minecraft:durability": {
+          "max_durability": <span id="span2"><span/>
+        },
+        "minecraft:weapon": {
+            "on_hurt_entity": {
+              "event": "damage_event"
+            }
+        },
+        "minecraft:render_offsets": "tools",
+        "minecraft:mining_speed": 1.5,
+      //攻撃力
+        "minecraft:damage": <span id="span3"><span/>,
+        "minecraft:enchantable": {
+          "value": 10,
+            "slot": "sword"
+        },
+        "minecraft:can_destroy_in_creative": false,
+      //実際に表示されるアイテム名
+        "minecraft:display_name":{
+          "value":"<span id="span4"><span/>"
+        },
+      //表示されるテクスチャ
+        "minecraft:icon": {
+          //リソースのitem_texture.jsonで定義する
+            "texture": "<span id="span5"><span/>"
+        }
+    },
+    "events": {
+          "damage_event": { 
+            "run_command":{
+              "command":[
+                "<span id="span6"><span/>"
+              ],
+              "target":"self"
+            },
+            "damage": {
+                "type": "magic",
+                "amount": 1
+            }
+          }
+    }
+  }
+} </p>
+ <p>アイテムID<p>
+<input type="text" value="〇〇:〇〇" id="text1" maxlength="100" />
+<input type="button" value="決定" onclick="clickBtn1()" />
 
 <script>
   function clickBtn1() {
@@ -10,5 +69,39 @@
     document.getElementById("span1").textContent = t1;
   }
 </script>
+  
+   <p>耐久値<p>
+<input type="text" value="数字入力" id="text2" maxlength="10" />
+<input type="button" value="決定" onclick="clickBtn2()" />
+
+<script>
+  function clickBtn2() {
+    const t2 = document.getElementById("text2").value;
+    document.getElementById("span2").textContent = t2;
+  }
+</script>
+
+   <p>攻撃力<p>
+<input type="text" value="数字入力" id="text3" maxlength="100" />
+<input type="button" value="決定" onclick="clickBtn3()" />
+
+<script>
+  function clickBtn3() {
+    const t3 = document.getElementById("text3").value;
+    document.getElementById("span3").textContent = t3;
+  }
+<script>
+ 
+  <p>ゲーム内でのアイテム名<p>
+<input type="text" value="とまとそーど" id="text4" maxlength="100" />
+<input type="button" value="決定" onclick="clickBtn4()" />
+
+<script>
+  function clickBtn4() {
+    const t4 = document.getElementById("text4").value;
+    document.getElementById("span4").textContent = t4;
+  }
+</script>
+
 
 </html>
